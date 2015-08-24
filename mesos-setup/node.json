@@ -1,4 +1,5 @@
 {
+  "zk": "zk://mesos.timbrook.im:2181",
   "run_list": [
     "recipe[base]"
   ]

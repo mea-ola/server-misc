@@ -2,12 +2,14 @@
 
 # Install base needed to run cookbooks
 yum update -y;
-yum install -y epel-release ruby;
+yum install -y epel-release;
+yum install -y ruby wget unzip;
 curl -L https://www.opscode.com/chef/install.sh | bash;
 
 # Download and unpack the release
-
+wget https://github.com/mea-ola/server-misc/archive/master.zip -O /tmp/chef.zip
+unzip /tmp/chef.zip -d /tmp/install
 
 # Run
-cd /tmp/install
+cd /tmp/install/server-misc-master/mesos-setup
 chef-solo -c solo.rb -j node.json
