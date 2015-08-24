@@ -1,13 +1,8 @@
-Generated at 2015-08-24 05:17:44 +0000
-NoMethodError: undefined method `source' for Chef::Resource::File
-/opt/chef/embedded/apps/chef/lib/chef/resource.rb:1119:in `method_missing'
-/tmp/install/cookbooks/base/recipes/default.rb:10:in `block in from_file'
-/opt/chef/embedded/apps/chef/lib/chef/resource_builder.rb:77:in `instance_eval'
-/opt/chef/embedded/apps/chef/lib/chef/resource_builder.rb:77:in `build'
-/opt/chef/embedded/apps/chef/lib/chef/dsl/recipe.rb:110:in `build_resource'
-/opt/chef/embedded/apps/chef/lib/chef/dsl/recipe.rb:71:in `declare_resource'
-/opt/chef/embedded/apps/chef/lib/chef/dsl/resources.rb:15:in `file'
-/tmp/install/cookbooks/base/recipes/default.rb:9:in `from_file'
+Generated at 2015-08-24 05:55:01 +0000
+NoMethodError: No resource or method named `ip' for `Chef::Recipe "default"'
+/opt/chef/embedded/apps/chef/lib/chef/dsl/recipe.rb:174:in `rescue in method_missing'
+/opt/chef/embedded/apps/chef/lib/chef/dsl/recipe.rb:171:in `method_missing'
+/tmp/install/cookbooks/base/recipes/default.rb:29:in `from_file'
 /opt/chef/embedded/apps/chef/lib/chef/mixin/from_file.rb:30:in `instance_eval'
 /opt/chef/embedded/apps/chef/lib/chef/mixin/from_file.rb:30:in `from_file'
 /opt/chef/embedded/apps/chef/lib/chef/cookbook_version.rb:228:in `load_recipe'

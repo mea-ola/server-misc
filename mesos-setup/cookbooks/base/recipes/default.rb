@@ -12,10 +12,23 @@ cookbook_file '/usr/lib/systemd/system/mesos-slave.service' do
   mode '0644'
 end
 
+cookbook_file '/etc/mesos-slave/containerizers' do
+  source 'containerizers'
+  action :create
+  mode '0644'
+end
+
 template '/etc/mesos/zk' do
   source 'zk.erb'
   owner 'root'
   group 'root'
   mode '0644'
   action :create
+end
+
+file '/etc/mesos-slave/ip' do
+  content node[:network][:interfaces][:eth1][:addresses].detect{|k,v| v[:family] == "inet" }.first
+  owner 'root'
+  group 'root'
+  mode '0644'
 end
