@@ -6,10 +6,9 @@ end
 
 yum_package ['docker', 'mesos']
 
-template '/usr/lib/systemd/system/mesos-slave.service' do
-  source 'mesos-slave.service.erb'
-  owner 'root'
-  group 'root'
+cookbook_file '/usr/lib/systemd/system/mesos-slave.service' do
+  source 'mesos-slave.service'
+  action :create
   mode '0644'
 end
 
@@ -18,4 +17,5 @@ template '/etc/mesos/zk' do
   owner 'root'
   group 'root'
   mode '0644'
+  action :create
 end
