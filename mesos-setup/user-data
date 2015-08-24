@@ -1,1 +1,13 @@
 #!/bin/bash
+
+# Install base needed to run cookbooks
+yum update -y;
+yum install -y epel-release ruby;
+curl -L https://www.opscode.com/chef/install.sh | bash;
+
+# Download and unpack the release
+
+
+# Run
+cd /tmp/install
+chef-solo -c solo.rb -j node.json
