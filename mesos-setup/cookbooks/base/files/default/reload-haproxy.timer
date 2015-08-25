@@ -1,0 +1,6 @@
+[Unit]
+Description=HAProxy Reload Timer
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min

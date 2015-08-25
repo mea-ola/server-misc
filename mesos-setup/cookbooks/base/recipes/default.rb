@@ -6,12 +6,6 @@ end
 
 yum_package ['docker', 'mesos']
 
-cookbook_file '/usr/lib/systemd/system/mesos-slave.service' do
-  source 'mesos-slave.service'
-  action :create
-  mode '0644'
-end
-
 cookbook_file '/etc/mesos-slave/containerizers' do
   source 'containerizers'
   action :create
@@ -26,7 +20,7 @@ template '/etc/mesos/zk' do
   action :create
 end
 
-file '/etc/mesos-slave/ip' do
+file '/etc/hostname' do
   content node[:network][:interfaces][:eth1][:addresses].detect{|k,v| v[:family] == "inet" }.first
   owner 'root'
   group 'root'
