@@ -2,5 +2,5 @@
 Description=HAProxy Reload Timer
 
 [Timer]
-OnBootSec=5min
+OnBootSec=10sec
 OnUnitActiveSec=5min

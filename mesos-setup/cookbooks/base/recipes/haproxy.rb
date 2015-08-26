@@ -27,7 +27,7 @@ template '/usr/bin/update-haproxy-config' do
 end
 
 # Enable the servies (TODO: look at systemd chef recipes)
-bash 'add_mesosphere_repo' do
+bash 'start_haproxy' do
   code <<-EOF
   systemctl enable /usr/lib/systemd/system/reload-haproxy.*
   systemctl start reload-haproxy.timer
