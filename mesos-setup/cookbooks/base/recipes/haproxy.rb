@@ -1,6 +1,6 @@
 yum_package ['haproxy']
 
-cookbook_file '/ust/bin/haproxy-marathon-bridge' do
+cookbook_file '/usr/bin/haproxy-marathon-bridge' do
   source 'haproxy-marathon-bridge'
   action :create
   mode '0776'
