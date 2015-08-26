@@ -1,11 +1,12 @@
 [Unit]
 Description=HAProxy Reload
+Requires=haproxy.service
 After=network.target
 Wants=network.target
 
 [Service]
 ExecStartPre=/usr/bin/update-haproxy-config
-ExecStart=/usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -sf $(/usr/bin/cat /run/haproxy.pid)
+ExecStart=/usr/bin/systemctl restart haproxy
 
 [Install]
 WantedBy=multi-user.target
