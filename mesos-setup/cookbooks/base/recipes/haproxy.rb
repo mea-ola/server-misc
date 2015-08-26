@@ -27,9 +27,18 @@ template '/usr/bin/update-haproxy-config' do
 end
 
 # Enable the servies (TODO: look at systemd chef recipes)
-bash 'start_haproxy' do
+bash 'enable_services' do
   code <<-EOF
   systemctl enable /usr/lib/systemd/system/reload-haproxy.*
-  systemctl start reload-haproxy.timer
 EOF
+end
+
+service 'haproxy' do 
+  provider Chef::Provider::Service::Systemd
+  action [:start]
+end
+
+service 'reload-haproxy.timer' do 
+  provider Chef::Provider::Service::Systemd
+  action [:enable, :start]
 end
