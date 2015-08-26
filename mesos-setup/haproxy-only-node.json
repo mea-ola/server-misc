@@ -1,0 +1,8 @@
+{
+  "zk": "zk://10.134.23.196:2181/mesos",
+  "marathon": "10.134.23.196:8080",
+  "run_list": [
+    "recipe[base]",
+    "recipe[base::haproxy]"
+  ]
+}
