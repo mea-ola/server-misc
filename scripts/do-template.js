@@ -16,7 +16,7 @@ module.exports = function (name, node) {
                     "curl -L https://www.opscode.com/chef/install.sh | bash;" + "\n" +
                     "# Download and unpack the release" + "\n" +
                     "wget https://github.com/mea-ola/server-misc/releases/download/v0.0.1/cookbooks.tar.gz -O /tmp/cookbooks.tar.gz" + "\n" +
-                    "tar xvf /tmp/cookbooks.tar.gz -d /tmp/" + "\n" +
+                    "cd /tmp && tar xvf cookbooks.tar.gz" + "\n" +
                     "wget https://github.com/mea-ola/server-misc/archive/master.zip -O /tmp/chef.zip" + "\n" +
                     "unzip /tmp/chef.zip -d /tmp/install" + "\n" +
                     "# Run " + "\n" +

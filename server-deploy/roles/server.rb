@@ -1,2 +1,1 @@
-run_list 'yum::epel',
-		 'base::default'
+run_list 'base::default'
