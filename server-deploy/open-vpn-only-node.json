@@ -1,0 +1,6 @@
+{
+  "run_list": [
+    "role[server]",
+    "recipe[openvpn::server]"
+  ]
+}
