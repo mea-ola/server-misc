@@ -11,15 +11,18 @@ module.exports = function (name, node) {
                     "# Install base needed to run cookbooks" + "\n" +
                     "yum update -y;" + "\n" + 
                     "yum install -y epel-release;" + "\n" +
-                    "yum install -y ruby wget unzip;" + "\n" +
+                    "yum install -y ruby wget unzip curl;" + "\n" +
                     "gem install berkshelf;" + "\n" +
                     "curl -L https://www.opscode.com/chef/install.sh | bash;" + "\n" +
                     "# Download and unpack the release" + "\n" +
                     "wget https://github.com/mea-ola/server-misc/releases/download/v0.0.1/cookbooks.tar.gz -O /tmp/cookbooks.tar.gz" + "\n" +
-                    "tar xvf /tmp/chef.tar.gz -d /tmp/" + "\n" +
+                    "tar xvf /tmp/cookbooks.tar.gz -d /tmp/" + "\n" +
+                    "wget https://github.com/mea-ola/server-misc/archive/master.zip -O /tmp/chef.zip" + "\n" +
+                    "unzip /tmp/chef.zip -d /tmp/install" + "\n" +
                     "# Run " + "\n" +
                     "cd /tmp/install/server-misc-master/server-deploy" + "\n" +
-                    "chef-solo -c solo.rb -j " + node + ".json",
+                    "chef-solo -c solo.rb -j " + node + ".json;" + "\n" +
+                    "curl http://169.254.169.254/metadata/v1.json;",
       "private_networking": true
     }
 }
