@@ -11,7 +11,7 @@ module.exports = function (name, node) {
                     "# Install base needed to run cookbooks" + "\n" +
                     "yum update -y;" + "\n" + 
                     "yum install -y epel-release;" + "\n" +
-                    "yum install -y ruby wget unzip curl;" + "\n" +
+                    "yum install -y ruby wget unzip curl gcc mysql-devel ruby-devel rubygems;" + "\n" +
                     "gem install berkshelf;" + "\n" +
                     "curl -L https://www.opscode.com/chef/install.sh | bash;" + "\n" +
                     "# Download and unpack the release" + "\n" +
